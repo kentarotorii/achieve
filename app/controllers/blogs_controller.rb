@@ -3,7 +3,8 @@ class BlogsController < ApplicationController
   before_action :set_blog, only: [:edit, :update, :destroy]
   
   def index
-    @blogs = Blog.order('id') #id順に表示したいので
+    #@blogs = Blog.order('id') #id順に表示したいので
+    @blogs = Blog.joins(:user).order('id')
   end
   
   def new
