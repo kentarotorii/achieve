@@ -1,6 +1,17 @@
-<p>
-  <%= @poem.title %>
-</p>
-<p>
-  <%= @poem.content %>
-</p>
+<div class="container">
+    <div class="col-md-8 col-md-offset-2 col-sm-10">
+        <h1><%= @poem.title %></h1>
+        <div class="row text-left">
+          <div><%= @poem.content%></div>
+        </div>
+        <div class="row">
+          <div style="float: right"><%= @poem.created_at.to_datetime.strftime("%Y年%m月%d日") %></div>
+        </div>
+        <div class="row">
+          <hr>
+        </div>
+        <div class="row">
+            <div style="float: right"><%= link_to "一覧へ戻る", poems_path, class: 'btn btn-default btn-sm btn-success' %></div>
+        </div>
+    </div>
+</div>
