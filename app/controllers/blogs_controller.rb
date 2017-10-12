@@ -5,6 +5,7 @@ class BlogsController < ApplicationController
   def index
     #@blogs = Blog.order('id') #id順に表示したいので
     @blogs = Blog.joins(:user).order('id')
+    binding.pry
   end
 
   def new
