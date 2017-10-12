@@ -1,13 +1,12 @@
 class PoemsController < ApplicationController
-  #before_action :set_poem, only: [:show]
+  before_action :set_poem, only: [:show]
 
   def index
     @poems = Poem.all
   end
 
   def show
-    @poem = Poem.find(params[:id])
-    binding.pry
+    #@poem = Poem.find(params[:id])
   end
 
   private
