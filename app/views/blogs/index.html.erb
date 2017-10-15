@@ -11,8 +11,8 @@
                   <p  class="blog_author" style="float: left"><%= profile_img(blog.user) %><%= blog.user.name %>（<%= blog.created_at.strftime("%Y年%m月%d日") %>）</p>
                 </div>
                 <div class="col-md-3 col-md-offset-0 col-sm-3 col-sm-offset-0" float: right">
-                  <%= link_to "", edit_blog_path(blog.id), class: 'btn fa fa-pencil-square-o' %>
-                  <%= link_to "", blog_path(blog.id), method: :delete, data: { confirm: '本当に削除していいですか？'}, class: 'btn fa fa-trash' %>
+                  <%= link_to "", edit_blog_path(blog.id), class: 'btn fa fa-pencil-square-o',:title => "編集"%>
+                  <%= link_to "", blog_path(blog.id), method: :delete, data: { confirm: '本当に削除していいですか？'}, class: 'btn fa fa-trash',:title => "削除" %>
                   <% if false %> <%= link_to "編集", edit_blog_path(blog.id), class: 'btn btn-default btn-sm btn-success' %> <% end %>
                   <% if false %> <%= link_to "削除", blog_path(blog.id), method: :delete, data: { confirm: '本当に削除していいですか？'}, class: 'btn btn-default btn-sm btn btn-danger' %> <% end %>
                 </div>
