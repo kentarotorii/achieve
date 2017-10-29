@@ -307,6 +307,7 @@ DEPENDENCIES
   devise
   dotenv-rails
   faker
+  font-awesome-rails
   her
   jbuilder (~> 2.0)
   jquery-rails

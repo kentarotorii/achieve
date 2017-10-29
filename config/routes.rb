@@ -1,16 +1,23 @@
 Rails.application.routes.draw do
 
+  get 'relationships/create'
+
+  get 'relationships/destroy'
+
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users, controllers: {
     registrations: "users/registrations",
     omniauth_callbacks: "users/omniauth_callbacks"
   }
 
-  resources :blogs, only: [:index, :new, :create, :edit, :update, :destroy] do
-    collection do
-      post :confirm
-    end
+  resources :users, only: [:index]
+
+  resources :blogs do
+    resources :comments
+    post :confirm, on: :collection
   end
+
+  resources :relationships, only: [:create, :destroy]
 
   resources :contacts, only: [:new, :create] do
     collection do

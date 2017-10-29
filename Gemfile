@@ -45,7 +45,8 @@ group :development, :test do
   gem 'better_errors'
 end
 
-gem 'twitter-bootstrap-rails'
+#gem 'twitter-bootstrap-rails'
+gem "twitter-bootstrap-rails"
 
 gem 'rails_12factor', group: :production
 
@@ -69,3 +70,5 @@ gem 'omniauth-facebook'
 #image uploader
 gem 'carrierwave'
 gem 'mini_magick'
+
+gem "font-awesome-rails"
