@@ -1,3 +1,4 @@
+<div class="wrapper">
 <div id="follow_form_<%= user.id %>">
   <% unless current_user.following?(user) %>
     <%= form_for(current_user.relationships.build(followed_id: user.id), remote: true) do |f| %>
@@ -9,4 +10,5 @@
       <%= f.submit "つながりを解除", class: "btn btn-large" %>
     <% end %>
   <% end %>
+</div>
 </div>
