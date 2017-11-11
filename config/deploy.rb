@@ -1,5 +1,5 @@
 lock '3.6.0'
-
+#
 # デプロイするアプリケーション名
 set :application, 'achieve'
 
