@@ -6,7 +6,7 @@ set :application, 'achieve'
 # cloneするgitのレポジトリ（xxxxxxxx：ユーザ名、yyyyyyyy：アプリケーション名）
 set :repo_url, 'https://github.com/kentarotorii/achieve'
 
-# deployするブランチ。デフォルトはmasterなのでなくても可。
+## deployするブランチ。デフォルトはmasterなのでなくても可。
 set :branch, ENV['BRANCH'] || 'master'
 
 # deploy先のディレクトリ。
