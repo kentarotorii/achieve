@@ -40,7 +40,9 @@ class BlogsController < ApplicationController
   end
 
   def edit
-    if @blog.user_id != current_user.id then
+    if @blog.nil?
+      redirect_to blogs_path, notice: "ブログが存在しません"
+    elsif @blog.user_id != current_user.id then
       redirect_to blogs_path, notice: "ブログの投稿者しか編集できません"
     end
   end
@@ -54,7 +56,9 @@ class BlogsController < ApplicationController
   end
 
   def destroy
-    if @blog.user_id != current_user.id then
+    if @blog.nil?
+      redirect_to blogs_path, notice: "ブログが存在しません"
+    elsif @blog.user_id != current_user.id then
       redirect_to blogs_path, notice: "ブログの投稿者しか削除できません"
     end
 
@@ -75,8 +79,5 @@ class BlogsController < ApplicationController
     def set_blog
       #@blog = Blog.find(params[:id])
       @blog = Blog.find_by(:id => params[:id])
-      if @blog.nil?
-        redirect_to blogs_path, notice: "ブログが存在しません"
-      end
     end
 end
